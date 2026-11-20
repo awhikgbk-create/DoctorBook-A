@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DoctorBook - منصة حجز مواعيد الأطباء">
+  <title>DoctorBook | احجز موعدك بسهولة</title>
+  <style>
+    :root{--primary:#176b87;--dark:#123447;--light:#f2f8fa;--accent:#22a6a1}
+    *{box-sizing:border-box}body{margin:0;font-family:Tahoma,Arial,sans-serif;background:#f7fafc;color:#173042;line-height:1.7}
+    header{background:#fff;box-shadow:0 2px 15px #0d344415;position:sticky;top:0;z-index:5}
+    .nav{max-width:1120px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .logo{font-size:25px;font-weight:800;color:var(--primary)}.logo span{color:var(--accent)}
+    nav a{color:#315365;text-decoration:none;margin:0 10px;font-weight:600}
+    .btn{border:0;border-radius:10px;padding:11px 19px;background:var(--primary);color:#fff;font-weight:700;cursor:pointer;text-decoration:none;display:inline-block}
+    .btn:hover{filter:brightness(.92)}.hero{background:linear-gradient(125deg,#e6f5f7,#f7fbfc);padding:72px 22px}
+    .hero-inner{max-width:1120px;margin:auto;display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+    h1{font-size:clamp(30px,5vw,48px);line-height:1.3;color:var(--dark);margin:0 0 18px}
+    .hero p{font-size:18px;color:#527080;max-width:620px}
+    .hero-card{background:#fff;border-radius:24px;padding:28px;box-shadow:0 15px 40px #12344714}
+    .hero-card .symbol{font-size:70px;text-align:center;color:var(--accent)}
+    section{max-width:1120px;margin:55px auto;padding:0 22px}.section-title{text-align:center;margin-bottom:28px}
+    .section-title h2{font-size:30px;color:var(--dark);margin:0}.section-title p{color:#6b8491}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .feature,.doctor{background:#fff;padding:23px;border-radius:17px;box-shadow:0 5px 22px #1234470c}
+    .feature b{font-size:19px;color:var(--primary)}.feature .icon{font-size:32px}
+    .doctors{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .doctor{text-align:center}.avatar{width:76px;height:76px;margin:0 auto 12px;border-radius:50%;background:#e5f3f5;display:grid;place-items:center;font-size:35px}
+    .doctor h3{margin:5px 0;color:var(--dark)}.doctor p{margin:4px 0 15px;color:#718895}
+    .notice{background:#eaf6f7;border-right:4px solid var(--accent);padding:14px 18px;border-radius:10px;color:#365b69}
+    footer{background:var(--dark);color:#d9e9ee;text-align:center;padding:26px 15px;margin-top:60px}
+    @media(max-width:760px){.hero-inner{grid-template-columns:1fr}.features,.doctors{grid-template-columns:1fr}nav{display:none}.hero{padding:48px 18px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo">Doctor<span>Book</span></div>
+      <nav><a href="#home">الرئيسية</a><a href="#features">مميزاتنا</a><a href="#doctors">الأطباء</a><a href="#contact">تواصل معنا</a></nav>
+      <a class="btn" href="#doctors">استكشف الأطباء</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home" style="max-width:none;margin:0">
+      <div class="hero-inner">
+        <div>
+          <h1>رعايتك الصحية تبدأ<br>من حجز أسهل</h1>
+          <p>منصة DoctorBook تساعدك على الوصول إلى الأطباء وتنظيم مواعيدك بسهولة من مكان واحد.</p>
+          <a class="btn" href="#doctors">تعرّف على الأطباء</a>
+        </div>
+        <div class="hero-card">
+          <div class="symbol">✚</div>
+          <h2 style="text-align:center;color:var(--dark)">صحتك أولويتنا</h2>
+          <p style="text-align:center;color:#718895">واجهة بسيطة تساعدك في الوصول إلى خدمات الحجز.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="section-title"><h2>لماذا DoctorBook؟</h2><p>تجربة منظمة وسهلة للمرضى والأطباء</p></div>
+      <div class="features">
+        <article class="feature"><div class="icon">📅</div><b>تنظيم المواعيد</b><p>اعرض المواعيد المتاحة وسهّل على المريض اختيار الوقت المناسب.</p></article>
+        <article class="feature"><div class="icon">🩺</div><b>الوصول للأطباء</b><p>واجهة مخصصة لعرض بيانات الأطباء وتخصصاتهم.</p></article>
+        <article class="feature"><div class="icon">🔒</div><b>تجربة واضحة</b><p>تصميم بسيط يوضح خطوات الوصول إلى خدمة الحجز.</p></article>
+      </div>
+    </section>
+
+    <section id="doctors">
+      <div class="section-title"><h2>الأطباء</h2><p>نماذج توضيحية لشكل بطاقات الأطباء</p></div>
+      <div class="doctors">
+        <article class="doctor"><div class="avatar">👨‍⚕️</div><h3>د. أحمد محمد</h3><p>طبيب باطنة</p><span class="notice">بيانات تجريبية</span></article>
+        <article class="doctor"><div class="avatar">👩‍⚕️</div><h3>د. سارة علي</h3><p>طبيبة أطفال</p><span class="notice">بيانات تجريبية</span></article>
+        <article class="doctor"><div class="avatar">👨‍⚕️</div><h3>د. محمود حسن</h3><p>طبيب عظام</p><span class="notice">بيانات تجريبية</span></article>
+      </div>
+      <p class="notice" style="margin-top:22px">تنبيه: هذه صفحة واجهة تجريبية فقط. لا يوجد حجز فعلي أو حسابات أو قاعدة بيانات متصلة في هذا الملف.</p>
+    </section>
+  </main>
+
+  <footer id="contact">© <span id="year"></span> DoctorBook — جميع الحقوق محفوظة</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
