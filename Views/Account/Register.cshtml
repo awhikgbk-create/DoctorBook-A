@@ -1,0 +1,3 @@
+@model RegisterViewModel
+@{ViewData["Title"]="إنشاء حساب مريض";}
+<section class="section page-section"><div class="form-card"><h1>إنشاء حساب جديد</h1><p>التسجيل متاح للمرضى فقط. يمكن للإدارة تفعيل حساب الطبيب بعد مراجعة بياناته.</p><form asp-action="Register" method="post"><div asp-validation-summary="All" class="validation"></div><label>الاسم بالكامل</label><input asp-for="FullName"/><label>البريد الإلكتروني</label><input asp-for="Email"/><label>رقم الهاتف</label><input asp-for="PhoneNumber"/><label>كلمة المرور (8 أحرف على الأقل)</label><input asp-for="Password"/><label>تأكيد كلمة المرور</label><input asp-for="ConfirmPassword"/><button class="btn">إنشاء حساب مريض</button></form></div></section>

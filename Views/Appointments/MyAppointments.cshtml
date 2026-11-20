@@ -1,0 +1,3 @@
+@model IEnumerable<Appointment>
+@{ViewData["Title"]="حجوزاتي";}
+<section class="section page-section"><h1>حجوزاتي</h1>@if(!Model.Any()){<p>لا توجد حجوزات حتى الآن.</p>}else{<div class="table-wrap"><table><thead><tr><th>الطبيب</th><th>التخصص</th><th>التاريخ</th><th>الوقت</th><th>الحالة</th><th>الدفع</th><th>إجراء</th></tr></thead><tbody>@foreach(var a in Model){<tr><td>@a.Doctor?.FullName</td><td>@a.Doctor?.Specialty</td><td>@a.AppointmentDate.ToString("yyyy/MM/dd")</td><td>@a.AppointmentTime.ToString(@"hh\:mm")</td><td>@a.Status</td><td>@a.Payment?.Status</td><td>@if(a.Status=="Pending"){<form asp-action="Cancel" method="post"><input type="hidden" name="id" value="@a.Id"/><button class="btn danger small">إلغاء</button></form>}</td></tr>}</tbody></table></div>}</section>
