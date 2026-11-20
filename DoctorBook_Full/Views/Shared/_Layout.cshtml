@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>@ViewData["Title"] - DoctorBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true"/>
+</head>
+<body>
+<header class="topbar"><a class="brand" asp-controller="Home" asp-action="Index"><span class="brand-mark">✚</span> Doctor<span class="brand-accent">Book</span></a>
+<nav class="main-nav"><a asp-controller="Home" asp-action="Index">الرئيسية</a><a asp-controller="Doctors" asp-action="Index">ابحث عن طبيب</a>
+@if(User.Identity?.IsAuthenticated==true){<a asp-controller="Notifications" asp-action="Index">الإشعارات</a><a asp-controller="Appointments" asp-action="MyAppointments">حجوزاتي</a>@if(User.IsInRole("Doctor")){<a asp-controller="DoctorDashboard" asp-action="Index">لوحة الطبيب</a>}@if(User.IsInRole("Admin")){<a asp-controller="Admin" asp-action="Index">الإدارة</a>}}
+</nav><div class="account">@if(User.Identity?.IsAuthenticated==true){<span class="user-chip">@User.Identity.Name</span><form asp-controller="Account" asp-action="Logout" method="post"><button class="link-button">خروج</button></form>}else{<a class="login-link" asp-controller="Account" asp-action="Login">تسجيل الدخول</a><a class="btn small" asp-controller="Account" asp-action="Register">ابدأ الآن</a>}</div></header>
+<main>@if(TempData["Message"]!=null){<div class="notice">✓ @TempData["Message"]</div>}@if(TempData["Error"]!=null){<div class="error notice-error">@TempData["Error"]</div>}@RenderBody()</main>
+<footer class="site-footer"><div class="footer-inner"><a class="brand footer-brand" asp-controller="Home" asp-action="Index">✚ Doctor<span class="brand-accent">Book</span></a><p>طريقك الأسهل للوصول إلى الرعاية الطبية المناسبة.</p><span>© @DateTime.Now.Year DoctorBook. جميع الحقوق محفوظة.</span></div></footer>
+<script src="~/js/site.js" asp-append-version="true"></script>@await RenderSectionAsync("Scripts",required:false)</body></html>

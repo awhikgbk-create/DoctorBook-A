@@ -1,0 +1,3 @@
+@model IEnumerable<DoctorProfile>
+@{ViewData["Title"]="إدارة الأطباء";}
+<section class="section page-section"><h1>إدارة الأطباء</h1><a class="btn" asp-action="PromotePatient">تحويل مريض إلى طبيب</a><div class="table-wrap"><table><thead><tr><th>الاسم</th><th>التخصص</th><th>المدينة</th><th>الحالة</th><th>الإجراء</th></tr></thead><tbody>@foreach(var d in Model){<tr><td>@d.FullName</td><td>@d.Specialty</td><td>@d.City</td><td>@(d.IsApproved?"معتمد":"بانتظار الاعتماد")</td><td><form asp-action="@(d.IsApproved?"RejectDoctor":"ApproveDoctor")" method="post"><input type="hidden" name="id" value="@d.Id"/><button class="btn small @(d.IsApproved?"danger":"")">@(d.IsApproved?"إيقاف الظهور":"اعتماد الطبيب")</button></form></td></tr>}</tbody></table></div></section>

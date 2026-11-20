@@ -1,0 +1,3 @@
+@model DoctorProfile
+@{ViewData["Title"]="ملفي الطبي";}
+<section class="section"><div class="form-card"><h1>تعديل الملف الشخصي</h1><form asp-action="Profile" method="post"><input type="hidden" asp-for="Id"/><label>الاسم</label><input asp-for="FullName"/><label>التخصص</label><input asp-for="Specialty"/><label>المدينة</label><input asp-for="City"/><label>نبذة</label><textarea asp-for="Bio"></textarea><label>سعر الكشف</label><input asp-for="ConsultationPrice" type="number"/><label>عنوان العيادة</label><input asp-for="ClinicAddress"/><label>هاتف العيادة</label><input asp-for="PublicPhone"/><button class="btn">حفظ التعديلات</button></form></div></section>

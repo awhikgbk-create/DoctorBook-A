@@ -1,0 +1,3 @@
+@model IEnumerable<SiteNotification>
+@{ViewData["Title"]="الإشعارات";}
+<section class="section page-section"><h1>الإشعارات</h1>@if(!Model.Any()){<p>لا توجد إشعارات.</p>}@foreach(var n in Model){<article class="notice-card"><div><strong>@n.Title</strong><p>@n.Message</p><small>@n.CreatedAt.ToLocalTime().ToString("yyyy/MM/dd HH:mm")</small></div>@if(!n.IsRead){<form asp-action="Read" method="post"><input type="hidden" name="id" value="@n.Id"/><button class="btn small">تمت القراءة</button></form>}</article>}</section>
